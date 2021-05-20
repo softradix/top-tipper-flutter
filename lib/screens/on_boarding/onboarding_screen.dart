@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/colors.dart';
+import 'package:flutter_top_tipper/screens/nationwide_leaderboard/leaderboard_screen.dart';
 import 'package:flutter_top_tipper/screens/on_boarding/slide_dots.dart';
 import 'package:flutter_top_tipper/screens/on_boarding/slide_item.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
@@ -64,96 +65,101 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: orange,
+      backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: Stack(
-                alignment: AlignmentDirectional.bottomCenter,
-                children: [
-                  Container(
-                    child: ImageWidget(
-                        imagePath: "on_boarding_mask.png",
-                        width: double.infinity,
-                        height: double.infinity,
-                        isFill: true),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 20.0),
-                        child: Visibility(
-                          visible: isSkipVisible,
-                          child: GestureDetector(
-                            onTap: () {
-                              print("clicked");
-                              movePage();
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              child: Text(
-                                "Skip",
-                                style: TextStyle(
-                                    fontSize: 14.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.end,
+        child: Container(
+          color: orange,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: Stack(
+                  alignment: AlignmentDirectional.bottomCenter,
+                  children: [
+                    Container(
+                      child: ImageWidget(
+                          imagePath: "on_boarding_mask.png",
+                          width: double.infinity,
+                          height: double.infinity,
+                          isFill: true),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 20.0),
+                          child: Visibility(
+                            visible: isSkipVisible,
+                            child: GestureDetector(
+                              onTap: () {
+                                print("clicked");
+                                movePage();
+                              },
+                              child: Container(
+                                width: double.infinity,
+                                child: Text(
+                                  "Skip",
+                                  style: TextStyle(
+                                      fontSize: 14.0,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.end,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  PageView.builder(
-                      onPageChanged: _onPageChanged,
-                      scrollDirection: Axis.horizontal,
-                      controller: _pageController,
-                      itemCount: slide_list.length,
-                      itemBuilder: (context, index) => SlideItem(index)),
-                  Positioned(
-                    bottom: 10.0,
-                    child: Row(
-                      children: [
-                        for (int i = 0; i < slide_list.length; i++)
-                          if (i == _currentPage)
-                            SlideDots(true)
-                          else
-                            SlideDots(false)
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 17.0,
-            ),
-            Container(
-              height: 50.0,
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  "CONTINUE",
-                  style: TextStyle(color: orange, fontSize: 16.0),
+                    PageView.builder(
+                        onPageChanged: _onPageChanged,
+                        scrollDirection: Axis.horizontal,
+                        controller: _pageController,
+                        itemCount: slide_list.length,
+                        itemBuilder: (context, index) => SlideItem(index)),
+                    Positioned(
+                      bottom: 10.0,
+                      child: Row(
+                        children: [
+                          for (int i = 0; i < slide_list.length; i++)
+                            if (i == _currentPage)
+                              SlideDots(true)
+                            else
+                              SlideDots(false)
+                        ],
+                      ),
+                    )
+                  ],
                 ),
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0))),
               ),
-            ),
-            SizedBox(
-              height: 17.0,
-            ),
-          ],
+              SizedBox(
+                height: 17.0,
+              ),
+              Container(
+                height: 50.0,
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>NationWideLeaderBoard()));
+                  },
+                  child: Text(
+                    "CONTINUE",
+                    style: TextStyle(color: orange, fontSize: 16.0),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0))),
+                ),
+              ),
+              SizedBox(
+                height: 17.0,
+              ),
+            ],
+          ),
         ),
       ),
     );
