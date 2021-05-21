@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
+import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 
+import '../colors.dart';
 import 'on_boarding/onboarding_screen.dart';
 
 class RoleSelection extends StatelessWidget {
@@ -23,7 +26,7 @@ class RoleSelection extends StatelessWidget {
                     SizedBox(height:100.0),
                     ImageWidget(imagePath: "top_tipper_logo.png", width: 200.0, height: 150.0,isFill: false),
                     Text(
-                      "It’s nice to be nice",
+                      AppStringConstants.NICE_TO_SEE,
                       style: TextStyle(fontSize: 16.0, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
@@ -33,7 +36,7 @@ class RoleSelection extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text("I am a:",
+                    Text(AppStringConstants.I_AM_A,
                         style: TextStyle(
                             fontSize: 22.0,
                             fontWeight: FontWeight.bold,
@@ -41,31 +44,20 @@ class RoleSelection extends StatelessWidget {
                         textAlign: TextAlign.center),
 
                     SizedBox(height:20.0),
-                    Container(
-                      height: 50.0,
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
-                      child: ElevatedButton(
-                        onPressed: () {
+                    MyElevatedButton(
+                        buttonText: AppStringConstants.Tipper,
+                        textColor: orange,
+                        buttonBgColor: Colors.white,
+                        onPress: () {
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen()));
-                        },
-                        child: Text(
-                          "Tipper".toUpperCase(),
-                          style: TextStyle(color: Colors.orange,fontSize: 16.0),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100.0),
-                            )),
-                      ),
-                    ),
+                        }),
                     SizedBox(height:20.0),
                     Container(
                       height: 50.0,
                       padding: EdgeInsets.symmetric(horizontal: 20.0),
                       child: OutlinedButton(
                         child: Text(
-                          "service provider".toUpperCase(),
+                          AppStringConstants.SERVICE_PROVIDER.toUpperCase(),
                           style: TextStyle(color: Colors.white,fontSize: 16.0),
                         ),
                         onPressed: () {
