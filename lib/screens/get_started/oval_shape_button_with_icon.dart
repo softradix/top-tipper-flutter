@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 

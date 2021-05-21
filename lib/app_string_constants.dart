@@ -13,6 +13,9 @@ class AppStringConstants{
   static const String EARN_TIPS_SIGN_UP_TPDAY= "EARN TIPS: SIGN UP TPDAY!";
   static const String ALREADY_AN_EXISTING_USER= "Already an existing user?";
   static const String LOG_IN= "Login";
+  static const String SIGN_UP= "Sign Up";
+  static const String CONTINUE= "CONTINUE";
+  static const String NEW_TO_TOP_TIPPER_SIGN_UP= "New to TopTipper? Sign up";
   static const String SIGN_UP_WITH_APPLE= "Sign up with Apple";
   static const String CONNECT_WITH_STRIPE= "CONNECT WITH STRIPE";
   static const String REGISTER_WITH_EMAIL= "REGISTER WITH EMAIL";

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/get_started/oval_shape_button_with_icon.dart';
+import 'package:flutter_top_tipper/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
@@ -95,7 +96,9 @@ class _GetStartedState extends State<GetStarted> {
                             buttonText: AppStringConstants.REGISTER_WITH_EMAIL,
                             textColor: Colors.white,
                             buttonBgColor: orange,
-                            onPress: () {}),
+                            onPress: () {
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignInScreen()));
+                            }),
                         SizedBox(height: 20.0,),
                         MyImageButton(imagePath: "icon_stripe.png",
                           name: AppStringConstants.CONNECT_WITH_STRIPE,

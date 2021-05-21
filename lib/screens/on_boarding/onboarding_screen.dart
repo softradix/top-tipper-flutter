@@ -1,10 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/nationwide_leaderboard/leaderboard_screen.dart';
 import 'package:flutter_top_tipper/screens/on_boarding/slide_dots.dart';
 import 'package:flutter_top_tipper/screens/on_boarding/slide_item.dart';
+import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 
 import 'on_board_slide_model.dart';
@@ -138,23 +140,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               SizedBox(
                 height: 17.0,
               ),
-              Container(
-                height: 50.0,
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>NationWideLeaderBoard()));
-                  },
-                  child: Text(
-                    "CONTINUE",
-                    style: TextStyle(color: orange, fontSize: 16.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0))),
-                ),
-              ),
+              MyElevatedButton(
+                  buttonText: AppStringConstants.CONTINUE,
+                  textColor: orange,
+                  buttonBgColor: Colors.white,
+                  onPress: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => NationWideLeaderBoard()));
+                  }),
               SizedBox(
                 height: 17.0,
               ),
