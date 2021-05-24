@@ -3,18 +3,19 @@ import 'package:flutter_top_tipper/widgets/image_widget.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 
 class MyImageButton extends StatelessWidget {
-  MyImageButton({@required this.imagePath,@required this.name,@required this.bgColor,this.imageWidth,this.imageHeight});
+  MyImageButton({@required this.imagePath,@required this.name,@required this.bgColor,this.imageWidth,this.imageHeight,this.addMargin});
   final String imagePath;
   final String name;
   final Color bgColor;
   final double imageWidth;
   final double imageHeight;
+  final bool addMargin;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 50.0,
-      margin:
-      EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+      margin: addMargin?EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0):
+      EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(100.0),

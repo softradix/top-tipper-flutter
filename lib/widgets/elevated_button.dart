@@ -10,7 +10,7 @@ class MyElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50.0,
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      margin: EdgeInsets.symmetric(horizontal: 20.0),
       child: ElevatedButton(
         onPressed: onPress,
         child: Text(

@@ -95,13 +95,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           padding: EdgeInsets.only(right: 20.0),
                           child: Visibility(
                             visible: isSkipVisible,
-                            child: GestureDetector(
-                              onTap: () {
-                                print("clicked");
-                                movePage();
-                              },
-                              child: Container(
-                                width: double.infinity,
+                            child: Container(
+                              width: double.infinity,
+                              child: InkWell(
+                                onTap: (){
+                                  movePage();
+                                },
                                 child: Text(
                                   "Skip",
                                   style: TextStyle(

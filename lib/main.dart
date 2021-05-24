@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/colors.dart';
+import 'package:flutter_top_tipper/screens/get_started/get_started.dart';
 import 'package:flutter_top_tipper/screens/splash.dart';
 
 void main() {
@@ -11,10 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData().copyWith(
+        primaryColor: orange
       ),
-      home: Splash(),
+      home: GetStarted(),
     );
   }
 }

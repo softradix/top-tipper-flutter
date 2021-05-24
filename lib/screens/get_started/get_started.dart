@@ -90,19 +90,19 @@ class _GetStartedState extends State<GetStarted> {
                         SizedBox(height: 40.0,),
                         MyImageButton(imagePath: "apple_icon.png",
                             name: AppStringConstants.SIGN_UP_WITH_APPLE,
-                        bgColor: Colors.black,imageWidth: 24.0,imageHeight: 24.0,),
+                        bgColor: Colors.black,imageWidth: 24.0,imageHeight: 24.0,addMargin: true),
                         SizedBox(height: 20.0,),
                         MyElevatedButton(
                             buttonText: AppStringConstants.REGISTER_WITH_EMAIL,
                             textColor: Colors.white,
                             buttonBgColor: orange,
                             onPress: () {
-                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignInScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInScreen()));
                             }),
                         SizedBox(height: 20.0,),
                         MyImageButton(imagePath: "icon_stripe.png",
                           name: AppStringConstants.CONNECT_WITH_STRIPE,
-                          bgColor: stripeBlue,imageWidth: 15.0,imageHeight: 15.0,),
+                          bgColor: stripeBlue,imageWidth: 15.0,imageHeight: 15.0,addMargin: true),
                         SizedBox(height: 20.0,),
                       ],
                     ),
