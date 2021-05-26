@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/chat_tab/chat_list_item.dart';
+import 'package:flutter_top_tipper/screens/dashBoard/chat_tab/one_to_one_chat_screen.dart';
 import 'package:flutter_top_tipper/screens/no_data_screen.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 
@@ -14,7 +15,7 @@ class RecentChatList extends StatefulWidget {
 }
 
 class _RecentChatListState extends State<RecentChatList> {
-  List<String> mItemList = ["1","2"];
+  List<String> mItemList = ["1", "2"];
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +39,20 @@ class _RecentChatListState extends State<RecentChatList> {
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(50), topRight: Radius.circular(50))),
         child: Container(
-          margin: EdgeInsets.only(top: 30.0),
+          margin: EdgeInsets.only(top: 20.0),
           child: mItemList.isEmpty
               ? NoDataScreen(
                   imagePath: "ic_no_chat.png", text: "No message yer!")
               : ListView.builder(
-                  itemCount: mItemList.length,
+                  itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {
-                    return ChatListItem();
+                    return ChatListItem(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>OneToOneChatScreen()));
+                      },
+                        imagePath: "ic_user_circle.png",
+                        name: "John Russell",
+                        lastMessage: "Hello Emily");
                   }),
         ),
       ),

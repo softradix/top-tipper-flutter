@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/chat_tab/recent_chat_list.dart';
+import 'package:flutter_top_tipper/screens/dashBoard/home_tab/home_sceen.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/notification_tab/notification_screen.dart';
+import 'package:flutter_top_tipper/screens/dashBoard/profile_tab/profile_screen.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/transaction_tab/transaction_history_screen.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key}) : super(key: key);
+class DashBoardScreen extends StatefulWidget {
+  const DashBoardScreen({Key key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _DashBoardScreenState createState() => _DashBoardScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DashBoardScreenState extends State<DashBoardScreen> {
   int _selectedIndex = 0;
   List<Widget> _bodyWidgetsList = [
-    NotificationTabScreen(),
+    HomeScreen(),
     TransactionHistoryScreen(),
     RecentChatList(),
     NotificationTabScreen(),
-    TransactionHistoryScreen()
+    ProfileScreen()
   ];
 
   void _onItemTapped(int index) {
@@ -37,39 +39,46 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
               icon: ImageWidget(
                   imagePath: "ic_grid.png",
-                  width: 30.0,
-                  height: 30.0,
-                  isFill: false),
+                  width: 20.0,
+                  height: 20.0,
+                  isFill: false,
+              color: _selectedIndex==0?orange:darkGrey,),
               label: ""),
           BottomNavigationBarItem(
               icon: ImageWidget(
                   imagePath: "ic_transaction.png",
                   width: 20.0,
                   height: 20.0,
-                  isFill: true),
+                  isFill: true,
+                color: _selectedIndex==1?orange:darkGrey,),
               label: ""),
           BottomNavigationBarItem(
               icon: ImageWidget(
                   imagePath: "ic_chat.png",
                   width: 20.0,
                   height: 20.0,
-                  isFill: true),
+                  isFill: true,
+                  color: _selectedIndex==2?orange:darkGrey),
               label: ""),
           BottomNavigationBarItem(
               icon: ImageWidget(
                   imagePath: "ic_notifications.png",
                   width: 20.0,
                   height: 20.0,
-                  isFill: true),
+                  isFill: true,
+                  color: _selectedIndex==3?orange:darkGrey),
               label: ""),
           BottomNavigationBarItem(
               icon: ImageWidget(
                   imagePath: "ic_user_fill.png",
                   width: 20.0,
                   height: 20.0,
-                  isFill: true),
+                  isFill: true,
+                  color: _selectedIndex==4?orange:darkGrey),
               label: ""),
         ],
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         selectedItemColor: orange,

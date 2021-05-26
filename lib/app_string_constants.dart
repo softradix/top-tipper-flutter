@@ -48,5 +48,11 @@ class AppStringConstants{
   static const String Please_reset_your_password= "Please reset your password.";
   static const String FORGOT_PASSWORD_DESCRIPTION= "Enter your registered email. We will send you a link to reset your password.";
   static const String UPLOAD_IMAGE_DESCRIPTION= "Upload a selfie of yourself. This is an\nimportant part of the service provider\nverification process. \n\nPlease ensure that your face is\n clearly visible.";
+  static const String HOME_TIP= "Tip: Remember to set up your Stripe Payments prior to Requesting a homeowner!";
+  static const String SET_UP_STRIPE_PAYMENTS= "Set up Stripe Payments";
+  static const String NO_ACTIVITY_YET= "No activity yet!";
+  static const String SCAN_QR= "Scan QR";
+  static const String TOTAL_RECEIVED= "Total Received";
+  static const String HINT_START_TIP= "Once you’ve start receiving tips, you will see the information here.";
 
 }

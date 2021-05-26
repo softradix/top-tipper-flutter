@@ -103,7 +103,7 @@ class TransactionHistoryListItem extends StatelessWidget {
             ],
           ),
           Divider(
-            color: Color(0xffCDCDCD),
+            color: lightGrey,
           )
         ],
       ),

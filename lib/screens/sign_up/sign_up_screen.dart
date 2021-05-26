@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
+import 'package:flutter_top_tipper/screens/dashBoard/dashboard.dart';
 import 'package:flutter_top_tipper/screens/sign_up/upload_selfie.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
@@ -176,7 +177,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     buttonText: AppStringConstants.SIGN_UP,
                                     textColor: Colors.white,
                                     buttonBgColor: orange,
-                                    onPress: () {}),
+                                    onPress: () {
+
+                                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>DashBoardScreen()));
+                                    }),
                               ),
                             ],
                           )

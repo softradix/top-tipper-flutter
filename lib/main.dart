@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/colors.dart';
-import 'package:flutter_top_tipper/screens/dashBoard/home_screen.dart';
+import 'package:flutter_top_tipper/screens/dashBoard/dashboard.dart';
 import 'package:flutter_top_tipper/screens/splash.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(primaryColor: orange),
-      home: HomeScreen(),
+      home: Splash(),
     );
   }
 }
