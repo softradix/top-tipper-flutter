@@ -37,7 +37,10 @@ class AppStringConstants{
   static const String Enter_Email_Address= "Enter Email Address";
   static const String SEND_LINK= "Send Link";
   static const String RESET= "Reset";
+  static const String CHATS= "Chats";
   static const String NEW_PASSWORD= "New Password";
+  static const String NOTIFICATIONS= "Notifications";
+  static const String TRANSACTION_HISTORY= "Transaction History";
   static const String CONFIRM_NEW_PASSWORD= "Confirm New Password";
   static const String RESEND_LINK= "Resend Link";
   static const String do_not_receive_link= "Didn’t receive the link?";
