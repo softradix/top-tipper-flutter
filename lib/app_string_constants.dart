@@ -13,11 +13,14 @@ class AppStringConstants{
   static const String EARN_TIPS_SIGN_UP_TPDAY= "EARN TIPS: SIGN UP TPDAY!";
   static const String ALREADY_AN_EXISTING_USER= "Already an existing user?";
   static const String ALREADY_AN_ACCOUNT= "Already have an account?";
+  static const String Not_Received_Code= "Didn’t receive the code?";
   static const String LOG_IN= "Login";
+  static const String RESEND_CODE= "RESEND CODE";
   static const String LOGIN= "Log in";
   static const String SIGN_UP= "Sign Up";
   static const String SIGN_UP_DESCRIPTION= "Please fill out your information below.";
   static const String CONTINUE= "CONTINUE";
+  static const String Start_receiving_tips= "Start receiving tips";
   static const String NEW_TO_TOP_TIPPER_SIGN_UP= "New to TopTipper? Sign up";
   static const String SIGN_UP_WITH_APPLE= "Sign up with Apple";
   static const String APPLE= "Apple";
@@ -37,7 +40,10 @@ class AppStringConstants{
   static const String Enter_Email_Address= "Enter Email Address";
   static const String SEND_LINK= "Send Link";
   static const String RESET= "Reset";
+  static const String SAVE= "Save";
+  static const String VERIFY= "Verify";
   static const String CHATS= "Chats";
+  static const String OLD_PASSWORD= "Old Password";
   static const String NEW_PASSWORD= "New Password";
   static const String NOTIFICATIONS= "Notifications";
   static const String TRANSACTION_HISTORY= "Transaction History";
@@ -45,6 +51,11 @@ class AppStringConstants{
   static const String RESEND_LINK= "Resend Link";
   static const String do_not_receive_link= "Didn’t receive the link?";
   static const String Create_New_Password= "Create New Password";
+  static const String ENTER_CODE= "Enter Code";
+  static const String Email_Verification= "Email Verification";
+  static const String Payment_Method= "Payment Method";
+  static const String Payment_Method_choice= "Please select the payment method you wish to link.";
+  static const String Email_Verification_Desc= "Please enter the verification code that was sent to your email.";
   static const String Please_reset_your_password= "Please reset your password.";
   static const String FORGOT_PASSWORD_DESCRIPTION= "Enter your registered email. We will send you a link to reset your password.";
   static const String UPLOAD_IMAGE_DESCRIPTION= "Upload a selfie of yourself. This is an\nimportant part of the service provider\nverification process. \n\nPlease ensure that your face is\n clearly visible.";

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/transaction_tab/transaction_history_list_item.dart';
+import 'package:flutter_top_tipper/screens/dashBoard/transaction_tab/transaction_history_pop_up.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 
 import '../../no_data_screen.dart';
@@ -41,7 +42,16 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
             : ListView.builder(
                 itemCount: mItemList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return TransactionHistoryListItem(
+                  return TransactionHistoryListItem(onTap: (){
+                    showDialog(context: context, builder: (context){
+                      return Dialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0)
+                        ),
+                        child: TransactionHistoryPopUp(),
+                      );
+                    });
+                  },
                     imagePath: "ic_user_circle.png",
                     name: "JOhn Russell",
                     city: "Los Angeles, California",
