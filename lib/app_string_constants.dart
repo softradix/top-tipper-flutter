@@ -26,6 +26,8 @@ class AppStringConstants{
   static const String APPLE= "Apple";
   static const String CONNECT_WITH_STRIPE= "CONNECT WITH STRIPE";
   static const String STRIPE= "STRIPE";
+  static const String Change_Password= "Change Password";
+  static const String Enable_Notifications= "Enable Notifications";
   static const String REGISTER_WITH_EMAIL= "REGISTER WITH EMAIL";
   static const String GET_STARTED_DESCRIPTION= "Create an account to start a tipping relationship with a homeowner, and start earning today!";
   static const String WELCOME_TO_TOP_TIPPER= "Welcome to TopTipper!";

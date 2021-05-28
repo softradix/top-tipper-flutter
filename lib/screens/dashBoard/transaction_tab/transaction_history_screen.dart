@@ -43,11 +43,11 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                 itemCount: mItemList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return TransactionHistoryListItem(onTap: (){
-                    showDialog(context: context, builder: (context){
+                    showDialog(
+                        useSafeArea: true,
+                        context: context, builder: (context){
                       return Dialog(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0)
-                        ),
+                       backgroundColor: Colors.transparent,
                         child: TransactionHistoryPopUp(),
                       );
                     });

@@ -21,7 +21,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           Navigator.pop(context);
         }),
         title: TextWidget(
-            text: "Change Password",
+            text: AppStringConstants.Change_Password,
             textSize: 18.0,
             textColor: Colors.white,
             textFontWeight: FontWeight.w700),

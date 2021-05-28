@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/get_started/oval_shape_button_with_icon.dart';
@@ -119,6 +120,9 @@ class _GetStartedState extends State<GetStarted> {
                             color: black1),
                         children: [
                           TextSpan(
+                            recognizer: TapGestureRecognizer()..onTap=(){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInScreen()));
+                            },
                             text: " ${AppStringConstants.LOG_IN}",
                             style: TextStyle(
                                 fontSize: 14.0,

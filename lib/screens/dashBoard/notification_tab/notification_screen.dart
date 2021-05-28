@@ -22,14 +22,13 @@ class _NotificationTabScreenState extends State<NotificationTabScreen> {
       backgroundColor: orange,
       appBar: AppBar(
         elevation: 0,
-        title: Center(
-          child: TextWidget(
-            text: AppStringConstants.NOTIFICATIONS,
-            textSize: 18.0,
-            textColor: Colors.white,
-            textFontWeight: FontWeight.w700,
-            textAlign: TextAlign.center,
-          ),
+        centerTitle: true,
+        title: TextWidget(
+          text: AppStringConstants.NOTIFICATIONS,
+          textSize: 18.0,
+          textColor: Colors.white,
+          textFontWeight: FontWeight.w700,
+          textAlign: TextAlign.center,
         ),
       ),
       body: Container(

@@ -25,5 +25,9 @@ final slide_list = [
   OnBoardSlideModel(
       imagePath: "on_board_third.png",
       title: "Review history!",
+      subTitle: "Review all of your tip transaction history all in one place!"),
+  OnBoardSlideModel(
+      imagePath: "on_board_third.png",
+      title: "Review history!",
       subTitle: "Review all of your tip transaction history all in one place!")
 ];

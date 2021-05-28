@@ -6,8 +6,10 @@ import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/nationwide_leaderboard/leaderboard_screen.dart';
 import 'package:flutter_top_tipper/screens/on_boarding/slide_dots.dart';
 import 'package:flutter_top_tipper/screens/on_boarding/slide_item.dart';
+import 'package:flutter_top_tipper/screens/on_boarding/video_player_screen.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
+import 'package:video_player/video_player.dart';
 
 import 'on_board_slide_model.dart';
 
@@ -26,6 +28,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   void initState() {
     super.initState();
+
     // Timer.periodic(Duration(seconds: 5), (timer) {
     //   if (_currentPage < slide_list.length) {
     //     _currentPage++;
@@ -38,13 +41,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   movePage() {
-    if (_currentPage < slide_list.length) {
-      _currentPage++;
-    } else {
-      _currentPage = 0;
-    }
-    _pageController.animateToPage(_currentPage,
-        duration: Duration(microseconds: 300), curve: Curves.elasticIn);
+    setState(() {
+      if (_currentPage < slide_list.length) {
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+      _pageController.animateToPage(_currentPage,
+          duration: Duration(microseconds: 300), curve: Curves.elasticIn);
+    });
   }
 
   @override
@@ -98,7 +103,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             child: Container(
                               width: double.infinity,
                               child: InkWell(
-                                onTap: (){
+                                onTap: () {
                                   movePage();
                                 },
                                 child: Text(
@@ -120,7 +125,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         scrollDirection: Axis.horizontal,
                         controller: _pageController,
                         itemCount: slide_list.length,
-                        itemBuilder: (context, index) => SlideItem(index)),
+                        itemBuilder: (context, index) => _currentPage == 3
+                            ? MyVideoPlayerScreen()
+                            : SlideItem(index)),
                     Positioned(
                       bottom: 10.0,
                       child: Row(

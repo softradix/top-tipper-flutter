@@ -178,8 +178,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     textColor: Colors.white,
                                     buttonBgColor: orange,
                                     onPress: () {
-
-                                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>DashBoardScreen()));
+                                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>DashBoardScreen()),(Route<dynamic> route) => false);
                                     }),
                               ),
                             ],
