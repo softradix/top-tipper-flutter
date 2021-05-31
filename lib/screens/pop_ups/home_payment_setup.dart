@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
+import 'package:flutter_top_tipper/screens/payment_method/PaymentMethodScreen.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 
 class PaymentSetupPopUp extends StatelessWidget {
@@ -59,7 +60,7 @@ class PaymentSetupPopUp extends StatelessWidget {
             height: 40.0,
             child: ElevatedButton(
               onPressed: () {
-                Navigator. pop(context, false);
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentMethodScreen()));
               },
               child: Text(
                 AppStringConstants

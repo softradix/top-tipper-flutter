@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/profile_tab/EmailVerificationScreen.dart';
+import 'package:flutter_top_tipper/screens/my_contact_section/my_contacts_screen.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 
@@ -354,6 +355,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   CupertinoSwitch(value: _allowMyContact, onChanged: (value){
                                     setState(() {
                                       _allowMyContact = value;
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>MyContactScreen()));
                                     });
                                   },activeColor: orange,trackColor: darkGrey,),
                                 ],
