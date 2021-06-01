@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/home_owener_detail/receive_tip_list_item.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
@@ -35,7 +36,7 @@ class ShareChatButtonViews extends StatelessWidget {
                           height: 28.0,
                           isFill: false),
                       TextWidget(
-                          text: "Share with \n Friends",
+                          text: AppStringConstants.SHARE_WITH_FRIENDS,
                           textSize: 10.0,
                           textColor: darkGrey,
                           textFontWeight: FontWeight.w500,textAlign: TextAlign.center,),
@@ -63,7 +64,7 @@ class ShareChatButtonViews extends StatelessWidget {
                           height: 28.0,
                           isFill: false,color: Colors.black,),
                       TextWidget(
-                          text: "Enable \n Chat",
+                          text: AppStringConstants.ENABLE_CHAT,
                           textSize: 10.0,
                           textColor: darkGrey,
                           textFontWeight: FontWeight.w500,textAlign: TextAlign.center,),

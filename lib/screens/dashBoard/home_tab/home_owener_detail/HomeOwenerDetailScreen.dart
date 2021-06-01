@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/home_owener_detail/buttons_views.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/home_owener_detail/received_tips_share_button_views.dart';
@@ -17,7 +18,7 @@ class HomeOwenerDetailScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: TextWidget(
-            text: "Home Owner Detail",
+            text: AppStringConstants.HOME_OWENER_DETAIL,
             textSize: 18.0,
             textColor: Colors.white,
             textFontWeight: FontWeight.w700),

@@ -16,7 +16,7 @@ final slide_list = [
       imagePath: "on_board_one.png",
       title: "Sign Up!",
       subTitle:
-          "A homeowner will provide either: \n1. Their personalized QR code \n2. Their direct TopTipper profile url\n (example: toptipper.co/johnsmith) \nIf you haven’t been invited yet, no worries! Sign up on your own!"),
+          "A homeowner will provide either: \n1. Their personalized QR code \n2. Their direct TopTipper profile url\n (example: toptipper.co/johnsmith) \n \nIf you haven’t been invited yet, no worries! Sign up on your own!"),
   OnBoardSlideModel(
       imagePath: "on_board_two.png",
       title: "Start receiving tips!",

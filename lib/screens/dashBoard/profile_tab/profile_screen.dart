@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/profile_tab/EmailVerificationScreen.dart';
 import 'package:flutter_top_tipper/screens/my_contact_section/my_contacts_screen.dart';
@@ -192,7 +193,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 SizedBox(width: 10.0,),
                                 Expanded(
                                   child: TextWidget(
-                                    text: "Add phone number",
+                                    text: AppStringConstants.ADD_PHONE_NUMBER,
                                     textSize: 12.0,
                                     textColor: lightGrey,
                                     textFontWeight: FontWeight.w500,
@@ -213,7 +214,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 SizedBox(width: 10.0,),
                                 Expanded(
                                   child: TextWidget(
-                                    text: "Add company",
+                                    text: AppStringConstants.ADD_COMPANY,
                                     textSize: 12.0,
                                     textColor: lightGrey,
                                     textFontWeight: FontWeight.w500,
@@ -237,7 +238,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               TextWidget(
-                                text: "Payment method".toUpperCase(),
+                                text: AppStringConstants.PAYMENT_METHOD.toUpperCase(),
                                 textSize: 10.0,
                                 textColor: darkGrey,
                                 textFontWeight: FontWeight.w500,

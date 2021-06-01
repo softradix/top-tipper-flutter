@@ -39,20 +39,20 @@ class EnableNotification extends StatelessWidget {
               Container(
                 margin: EdgeInsets.symmetric(vertical: 30.0, horizontal: 40.0),
                 child: TextWidget(
-                    text: "Enable notifications to stay in \n the loop.",
+                    text: AppStringConstants.ENABLE_NOTIFICATION,
                     textSize: 12.0,
                     textColor: black1,
                     textFontWeight: FontWeight.w500,textAlign: TextAlign.center,),
               ),
               MyElevatedButton(
-                  buttonText: "enable",
+                  buttonText: AppStringConstants.ENABLE,
                   textColor: Colors.white,
                   buttonBgColor: orange,
                   onPress: () {}),
               SizedBox(height: 20.0,),
               MyStrokedButton(onCliCk: (){
                 Navigator.pop(context);
-              }, text: "Skip".toUpperCase(), textColor: orange, strokeColor: orange),
+              }, text: AppStringConstants.SKIP.toUpperCase(), textColor: orange, strokeColor: orange),
             ],
           ),
         ),

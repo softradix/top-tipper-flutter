@@ -9,6 +9,7 @@ import 'package:flutter_top_tipper/screens/on_boarding/slide_item.dart';
 import 'package:flutter_top_tipper/screens/on_boarding/video_player_screen.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
+import 'package:flutter_top_tipper/widgets/text_widget.dart';
 import 'package:video_player/video_player.dart';
 
 import 'on_board_slide_model.dart';
@@ -43,12 +44,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   movePage() {
     setState(() {
       if (_currentPage < slide_list.length) {
-        _currentPage++;
+        print("before=>$_currentPage");
+        _pageController.animateToPage(_currentPage,
+            duration: Duration(microseconds: 300), curve: Curves.elasticIn);
       } else {
-        _currentPage = 0;
+        print("equal=>$_currentPage");
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => NationWideLeaderBoard()));
       }
-      _pageController.animateToPage(_currentPage,
-          duration: Duration(microseconds: 300), curve: Curves.elasticIn);
+
     });
   }
 
@@ -96,28 +102,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         SizedBox(
                           height: 20.0,
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 20.0),
-                          child: Visibility(
-                            visible: isSkipVisible,
-                            child: Container(
-                              width: double.infinity,
-                              child: InkWell(
-                                onTap: () {
-                                  movePage();
-                                },
-                                child: Text(
-                                  "Skip",
-                                  style: TextStyle(
-                                      fontSize: 14.0,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.end,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                     PageView.builder(
@@ -139,7 +123,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               SlideDots(false)
                         ],
                       ),
-                    )
+                    ),
+
+                    Positioned(
+                      top: 20.0,
+                      right: 20.0,
+                      child: Visibility(
+                        visible: isSkipVisible,
+                        child: InkWell(
+                          onTap: (){
+                            _currentPage++;
+                            movePage();
+                          },
+                          child: TextWidget(
+                            text: "Skip",
+                            textSize: 14.0,
+                            textColor: black1,
+                            textFontWeight: FontWeight.w700,textAlign: TextAlign.end,),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

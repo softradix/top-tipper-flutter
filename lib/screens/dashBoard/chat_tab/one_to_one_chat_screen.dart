@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/chat_tab/chat_list_model.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
@@ -57,7 +58,7 @@ class _OneToOneChatScreenState extends State<OneToOneChatScreen> {
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
-                hintText: "Type something here...",
+                hintText: AppStringConstants.TYPE_SOMETHNG_HERE,
                 hintStyle: TextStyle(
                   color: darkGrey
                 ),

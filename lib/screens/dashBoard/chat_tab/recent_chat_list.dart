@@ -42,7 +42,7 @@ class _RecentChatListState extends State<RecentChatList> {
           margin: EdgeInsets.only(top: 20.0),
           child: mItemList.isEmpty
               ? NoDataScreen(
-                  imagePath: "ic_no_chat.png", text: "No message yer!")
+                  imagePath: "ic_no_chat.png", text: AppStringConstants.NO_MESSAGE_YET)
               : ListView.builder(
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index) {

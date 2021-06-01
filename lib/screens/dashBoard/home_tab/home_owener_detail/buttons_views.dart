@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/enable_notification.dart';
 import 'package:flutter_top_tipper/widgets/button_stroke.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
@@ -24,7 +25,7 @@ class ButtonsViewsOnDetails extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 25.0,left: 20.0,right: 20.0),
                     child: TextWidget(
-                      text: "Send a request to the homeowner to establish a TopTipper relationship with them. They will get notified of the request, approve the relationship, and the tipping shall begin!",
+                      text: AppStringConstants.REQUEST_TO_HOME_OWENER,
                       textSize: 12.0,
                       textColor: black1,
                       textFontWeight: FontWeight.w500,textAlign: TextAlign.center,),
@@ -32,17 +33,17 @@ class ButtonsViewsOnDetails extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 25.0,left: 20.0,right: 20.0,bottom: 20.0),
                     child: TextWidget(
-                        text: "Tip: Make sure your profile is up to date, and your profile picture is clear and visible.",
+                        text: AppStringConstants.TIP_PROFILE_UP_TO_DATE,
                         textSize: 12.0,
                         textColor: black1,
                         textFontWeight: FontWeight.w400,textAlign: TextAlign.center),
                   ),
-                  Visibility(visible:false,child: MyElevatedButton(buttonText: "Approval pending", textColor: Colors.white, buttonBgColor: orange, onPress: (){})),
-                  MyElevatedButton(buttonText: "Send Request", textColor: Colors.white, buttonBgColor: orange, onPress: (){
+                  Visibility(visible:false,child: MyElevatedButton(buttonText: AppStringConstants.APPROVAL_PENDING, textColor: Colors.white, buttonBgColor: orange, onPress: (){})),
+                  MyElevatedButton(buttonText: AppStringConstants.SEND_REQUEST, textColor: Colors.white, buttonBgColor: orange, onPress: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>EnableNotification()));
                   }),
                   SizedBox(height: 20.0,),
-                  Visibility(visible:false,child: MyStrokedButton(onCliCk: (){}, text: "Cancel Request", textColor: orange, strokeColor: orange))
+                  Visibility(visible:false,child: MyStrokedButton(onCliCk: (){}, text: AppStringConstants.CANCEL_REQUEST, textColor: orange, strokeColor: orange))
                 ],),
               Container(
                 margin: EdgeInsets.only(bottom: 20.0,left: 20.0,right: 20.0),
@@ -50,13 +51,13 @@ class ButtonsViewsOnDetails extends StatelessWidget {
                   children: [
                     SizedBox(height: 50.0,),
                     TextWidget(
-                        text: "In order to request a relationship and receive tips, please setup your Stripe payment account.",
+                        text: AppStringConstants.REQUEST_RELATIONSHIP,
                         textSize: 12.0,
                         textColor: black1,
                         textFontWeight: FontWeight.w500,textAlign: TextAlign.center),
                     SizedBox(height: 10.0,),
                     TextWidget(
-                        text: "Set up my account!",
+                        text: AppStringConstants.SET_UP_MY_ACCOUNT,
                         textSize: 12.0,
                         textColor: orange,
                         textFontWeight: FontWeight.w500,textAlign: TextAlign.center),

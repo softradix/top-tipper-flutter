@@ -15,7 +15,9 @@ class AppStringConstants{
   static const String ALREADY_AN_ACCOUNT= "Already have an account?";
   static const String Not_Received_Code= "Didn’t receive the code?";
   static const String LOG_IN= "Login";
+  static const String TYPE_SOMETHNG_HERE= "Type something here...";
   static const String RESEND_CODE= "RESEND CODE";
+  static const String NO_MESSAGE_YET= "No message yet!";
   static const String LOGIN= "Log in";
   static const String SIGN_UP= "Sign Up";
   static const String SIGN_UP_DESCRIPTION= "Please fill out your information below.";
@@ -65,6 +67,25 @@ class AppStringConstants{
   static const String SET_UP_STRIPE_PAYMENTS= "Set up Stripe Payments";
   static const String NO_ACTIVITY_YET= "No activity yet!";
   static const String SCAN_QR= "Scan QR";
+  static const String APPROVAL_PENDING= "Approval pending";
+  static const String SEND_REQUEST= "Send Request";
+  static const String HOME_OWENER= "Home Owners";
+  static const String ENABLE= "enable";
+  static const String MY_CLIENTS= "My Clients";
+  static const String SKIP= "Skip";
+  static const String PAYMENT_METHOD= "Payment method";
+  static const String ADD_COMPANY= "Add company";
+  static const String ADD_PHONE_NUMBER= "Add phone number";
+  static const String ENABLE_NOTIFICATION= "Enable notifications to stay in \n the loop.";
+  static const String SEARCH_HOME_OWENER= "Search home owners";
+  static const String ENABLE_CHAT= "Enable \n Chat";
+  static const String SHARE_WITH_FRIENDS= "Share with \n Friends";
+  static const String HOME_OWENER_DETAIL= "Home Owner Detail";
+  static const String CANCEL_REQUEST= "Cancel Request";
+  static const String SET_UP_MY_ACCOUNT= "Set up my account!";
+  static const String REQUEST_RELATIONSHIP= "In order to request a relationship and receive tips, please setup your Stripe payment account.";
+  static const String TIP_PROFILE_UP_TO_DATE= "Tip: Make sure your profile is up to date, and your profile picture is clear and visible.";
+  static const String REQUEST_TO_HOME_OWENER= "Send a request to the home owner to establish a TopTipper relationship with them. They will get notified of the request, approve the relationship, and the tipping shall begin!";
   static const String TOTAL_RECEIVED= "Total Received";
   static const String HINT_START_TIP= "Once you’ve start receiving tips, you will see the information here.";
 

@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/my_clients_section/my_clients.dart';
+import 'package:flutter_top_tipper/screens/dashBoard/home_tab/scanner_screen/scanner_view_screen.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
@@ -126,7 +127,7 @@ class _PagerViewLayoutState extends State<PagerViewLayout> {
                     margin: EdgeInsets.only(top: 20.0),
                     child: OutlinedButton(
                       child: Text(
-                        "Approval Pending".toUpperCase(),
+                        AppStringConstants.APPROVAL_PENDING.toUpperCase(),
                         style: TextStyle(color: orange, fontSize: 12.0),
                       ),
                       onPressed: (){},
@@ -152,7 +153,7 @@ class _PagerViewLayoutState extends State<PagerViewLayout> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 MyElevatedButton(
-                    buttonText: "My Clients",
+                    buttonText: AppStringConstants.MY_CLIENTS,
                     textColor: Colors.white,
                     buttonBgColor: orange,
                     onPress: () {
@@ -160,12 +161,17 @@ class _PagerViewLayoutState extends State<PagerViewLayout> {
                     }),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 15.0),
-                  child: TextWidget(
-                    text: AppStringConstants.SCAN_QR,
-                    textSize: 12.0,
-                    textColor: orange,
-                    textFontWeight: FontWeight.w500,
-                    textAlign: TextAlign.center,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ScannerViewScreen()));
+                    },
+                    child: TextWidget(
+                      text: AppStringConstants.SCAN_QR,
+                      textSize: 12.0,
+                      textColor: orange,
+                      textFontWeight: FontWeight.w500,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 )
               ],

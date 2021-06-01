@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/home_owener_detail/HomeOwenerDetailScreen.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/my_clients_section/clients_list_item.dart';
@@ -13,7 +14,7 @@ class MyClientsListScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: TextWidget(
-          text: "Home Owners",
+          text: AppStringConstants.HOME_OWENER,
           textSize: 18.0,
           textColor: Colors.white,
           textFontWeight: FontWeight.w700),
@@ -45,7 +46,7 @@ class MyClientsListScreen extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Search home owners"
+                            hintText: AppStringConstants.SEARCH_HOME_OWENER
                         ),
                       ),
                     )

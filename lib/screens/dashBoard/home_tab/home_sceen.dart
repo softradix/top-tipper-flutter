@@ -6,7 +6,6 @@ import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/home_no_user_data_view.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/home_tab/layout_pager.dart';
 import 'package:flutter_top_tipper/screens/payment_method/PaymentMethodScreen.dart';
-import 'package:flutter_top_tipper/screens/pop_ups/home_payment_setup.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 
@@ -18,7 +17,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _showPager=true;
+  bool _showPager = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,9 +73,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         textAlign: TextAlign.center),
                   ],
                 ),
-                SizedBox(height: 20.0,),
+                SizedBox(
+                  height: 20.0,
+                ),
                 Expanded(
-                  child: _showPager?PagerViewLayout(): Center(child: HomeNoUserData()),
+                  child: _showPager
+                      ? PagerViewLayout()
+                      : Center(child: HomeNoUserData()),
                 ),
               ],
             ),

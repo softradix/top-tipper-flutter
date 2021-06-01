@@ -72,7 +72,6 @@ class ChatListItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container()
               ],
             ),
             Divider(
