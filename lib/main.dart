@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(primaryColor: orange),
       home: Splash(),
-      //text
     );
   }
 }
