@@ -82,17 +82,14 @@ class ShareChatButtonViews extends StatelessWidget {
               textColor: darkGrey,
               textFontWeight: FontWeight.w500,),
           ),
-          Container(
-            height: 200.0,
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index){
-              return ReceiveTipListItem(onTap: (){
+          ListView.builder(
+            scrollDirection: Axis.vertical,
+              itemCount: 5,
+              itemBuilder: (BuildContext context, int index){
+            return ReceiveTipListItem(onTap: (){
 
-              },name: "John",);
-            }),
-          )
+            },name: "John",);
+          })
         ],
       ),
     );

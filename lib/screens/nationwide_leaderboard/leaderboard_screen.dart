@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/get_started/get_started.dart';
 import 'package:flutter_top_tipper/screens/nationwide_leaderboard/leaderboard_item.dart';
-import 'package:flutter_top_tipper/screens/nationwide_leaderboard/nationwide_leaderboard_model.dart';
 import 'package:flutter_top_tipper/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
@@ -15,18 +14,23 @@ import 'package:flutter_top_tipper/widgets/text_widget.dart';
 import '../../app_string_constants.dart';
 
 class NationWideLeaderBoard extends StatefulWidget {
-  const NationWideLeaderBoard({Key key}) : super(key: key);
+  NationWideLeaderBoard(this.role);
+  final String role;
 
   @override
   _NationWideLeaderBoardState createState() => _NationWideLeaderBoardState();
 }
 
 class _NationWideLeaderBoardState extends State<NationWideLeaderBoard> {
-  List<NationWideModel> _mList = [
-    NationWideModel(username: "Markel Hell", imagePath: "trophy_orange.png", points: "532", backColor:lightPink),
-    NationWideModel(username: "Demitry", imagePath: "trophy_green.png", points: "532", backColor:lightGreen),
-    NationWideModel(username: "John Doe", imagePath: "trophy_cyan.png", points: "532", backColor:lightCyan),
-  ];
+
+  String role;
+
+  @override
+  void initState() {
+    super.initState();
+    role = widget.role;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +67,8 @@ class _NationWideLeaderBoardState extends State<NationWideLeaderBoard> {
                         textFontWeight: FontWeight.w700),
                     TextWidget(
                         text:
-                            AppStringConstants.CREATE_ACCOUNT_TO_SECURE_ACCOUNT,
+                            role == AppStringConstants.ROLE_TIPPER?AppStringConstants.START_TIPING_TO_SECURE_ACCOUNT
+                                :AppStringConstants.CREATE_ACCOUNT_TO_SECURE_ACCOUNT,
                         textSize: 12.0,
                         textColor: Colors.white,
                         textFontWeight: FontWeight.w500,
@@ -78,7 +83,7 @@ class _NationWideLeaderBoardState extends State<NationWideLeaderBoard> {
                         textFontWeight: FontWeight.w700,
                         textAlign: TextAlign.center),
                     TextWidget(
-                        text: AppStringConstants.CREATE_ACCOUNT_TO_EARN_POINTS,
+                        text: role == AppStringConstants.ROLE_TIPPER?AppStringConstants.START_TIPING_TO_EARN_POINTS:AppStringConstants.CREATE_ACCOUNT_TO_EARN_POINTS,
                         textSize: 12.0,
                         textColor: Colors.white,
                         textFontWeight: FontWeight.w500,
@@ -153,11 +158,12 @@ class _NationWideLeaderBoardState extends State<NationWideLeaderBoard> {
                       textColor: Colors.white,
                       buttonBgColor: orange,
                       onPress: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>GetStarted()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>GetStarted(role)));
                       }),
                 ),
                 TextWidget(
-                    text: AppStringConstants.EARN_TIPS_SIGN_UP_TPDAY,
+                    text: role == AppStringConstants.ROLE_TIPPER?AppStringConstants.EARN_POINTS_START_TIPPING_TODAY
+                        :AppStringConstants.EARN_TIPS_SIGN_UP_TPDAY,
                     textSize: 12.0,
                     textColor: darkGrey,
                     textFontWeight: FontWeight.w500,
@@ -175,7 +181,7 @@ class _NationWideLeaderBoardState extends State<NationWideLeaderBoard> {
                           children: [
                             TextSpan(
                               recognizer: TapGestureRecognizer()..onTap=(){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInScreen()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInScreen(role)));
                               },
                               text: " ${AppStringConstants.LOG_IN}",
                               style: TextStyle(

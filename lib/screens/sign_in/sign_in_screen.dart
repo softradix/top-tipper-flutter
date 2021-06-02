@@ -11,6 +11,8 @@ import 'package:flutter_top_tipper/widgets/image_widget.dart';
 import 'package:flutter_top_tipper/widgets/text_widget.dart';
 
 class SignInScreen extends StatefulWidget {
+  SignInScreen(this.role);
+  final String role;
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
@@ -18,6 +20,13 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   bool _isHidden = true;
 
+  String role;
+
+  @override
+  void initState() {
+    super.initState();
+    role = widget.role;
+  }
   void _togglePasswordView() {
     setState(() {
       _isHidden = !_isHidden;
@@ -60,105 +69,116 @@ class _SignInScreenState extends State<SignInScreen> {
                             onPressed: () => Navigator.of(context).pop(),
                           ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: 30.0, left: 20.0, right: 20.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  TextWidget(
-                                      text:
-                                          AppStringConstants.WELCOME_TO_TOP_TIPPER,
-                                      textSize: 24.0,
-                                      textColor: black1,
-                                      textFontWeight: FontWeight.w700),
-                                  SizedBox(height: 5.0,),
-                                  TextWidget(
-                                      text: AppStringConstants
-                                          .EXISTING_USER_PLEASE_LOGIN,
-                                      textSize: 12.0,
-                                      textColor: darkGrey,
-                                      textFontWeight: FontWeight.w500),
-                                  TextField(
-                                    decoration: InputDecoration(
-                                      border: UnderlineInputBorder(),
-                                      labelText: AppStringConstants.User_ID_Email,
-                                    ),
-                                  ),
-                                  TextField(
-                                    obscureText: _isHidden,
-                                    decoration: InputDecoration(
-                                      border: UnderlineInputBorder(),
-                                      labelText: AppStringConstants.PASSWORD,
-                                      suffix: InkWell(
-                                        onTap: _togglePasswordView,
-                                        child: Icon(_isHidden
-                                            ? Icons.visibility
-                                            : Icons.visibility_off),
+                        SingleChildScrollView(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(
+                                    top: 30.0, left: 20.0, right: 20.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: [
+                                    TextWidget(
+                                        text:
+                                            AppStringConstants.WELCOME_TO_TOP_TIPPER,
+                                        textSize: 24.0,
+                                        textColor: black1,
+                                        textFontWeight: FontWeight.w700),
+                                    SizedBox(height: 5.0,),
+                                    TextWidget(
+                                        text: AppStringConstants
+                                            .EXISTING_USER_PLEASE_LOGIN,
+                                        textSize: 12.0,
+                                        textColor: darkGrey,
+                                        textFontWeight: FontWeight.w500),
+                                    TextField(
+                                      decoration: InputDecoration(
+                                        border: UnderlineInputBorder(),
+                                        labelText: AppStringConstants.User_ID_Email,
                                       ),
                                     ),
+                                    TextField(
+                                      obscureText: _isHidden,
+                                      decoration: InputDecoration(
+                                        border: UnderlineInputBorder(),
+                                        labelText: AppStringConstants.PASSWORD,
+                                        suffix: InkWell(
+                                          onTap: _togglePasswordView,
+                                          child: Icon(_isHidden
+                                              ? Icons.visibility
+                                              : Icons.visibility_off),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(top: 10.0),
+                                      child: InkWell(
+                                        onTap: (){
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPasswordScreen()));
+                                        },
+                                        child: TextWidget(
+                                            textAlign: TextAlign.end,
+                                            text: "${AppStringConstants.FORGOT_PASSWORD}?",
+                                            textSize: 12.0,
+                                            textColor: darkGrey,
+                                            textFontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(top: 20.0),
+                                    child: MyElevatedButton(
+                                        buttonText: AppStringConstants.LOGIN,
+                                        textColor: Colors.white,
+                                        buttonBgColor: orange,
+                                        onPress: () {
+                                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>DashBoardScreen()),(Route<dynamic> route) => false);
+                                        }),
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(top: 10.0),
-                                    child: InkWell(
-                                      onTap: (){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPasswordScreen()));
-                                      },
-                                      child: TextWidget(
-                                          textAlign: TextAlign.end,
-                                          text: "${AppStringConstants.FORGOT_PASSWORD}?",
-                                          textSize: 12.0,
-                                          textColor: darkGrey,
-                                          textFontWeight: FontWeight.w500),
-                                    ),
+                                    margin: EdgeInsets.symmetric(vertical: 10.0),
+                                    child: TextWidget(
+                                        textAlign: TextAlign.center,
+                                        text: "OR",
+                                        textSize: 10.0,
+                                        textColor: darkGrey,
+                                        textFontWeight: FontWeight.w500),
                                   ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          margin: EdgeInsets.only(left: 20.0,right: role !=AppStringConstants.ROLE_TIPPER?5.0:20.0),
+                                          child: MyImageButton(imagePath: "apple_icon.png",
+                                            name: role !=AppStringConstants.ROLE_TIPPER?AppStringConstants.APPLE:AppStringConstants.SIGN_UP_WITH_APPLE,
+                                            bgColor: Colors.black,imageWidth: 24.0,imageHeight: 24.0,addMargin: false,),
+                                        ),
+                                      ),
+                                      Visibility(
+                                        visible: role !=AppStringConstants.ROLE_TIPPER,
+                                        child: Expanded(
+                                          child: Container(
+                                            margin: EdgeInsets.only(right: 20.0,left: 5.0),
+                                            child: MyImageButton(imagePath: "icon_stripe.png",
+                                                name: AppStringConstants.STRIPE,
+                                                bgColor: stripeBlue,imageWidth: 15.0,imageHeight: 15.0,addMargin: false),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
                                 ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(top: 20.0),
-                              child: MyElevatedButton(
-                                  buttonText: AppStringConstants.LOGIN,
-                                  textColor: Colors.white,
-                                  buttonBgColor: orange,
-                                  onPress: () {
-                                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>DashBoardScreen()),(Route<dynamic> route) => false);
-                                  }),
-                            ),
-                            Container(
-                              margin: EdgeInsets.symmetric(vertical: 20.0),
-                              child: TextWidget(
-                                  textAlign: TextAlign.center,
-                                  text: "OR",
-                                  textSize: 10.0,
-                                  textColor: darkGrey,
-                                  textFontWeight: FontWeight.w500),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.only(left: 20.0,right: 5.0),
-                                    child: MyImageButton(imagePath: "apple_icon.png",
-                                      name: AppStringConstants.APPLE,
-                                      bgColor: Colors.black,imageWidth: 24.0,imageHeight: 24.0,addMargin: false,),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.only(right: 20.0,left: 5.0),
-                                    child: MyImageButton(imagePath: "icon_stripe.png",
-                                      name: AppStringConstants.STRIPE,
-                                      bgColor: stripeBlue,imageWidth: 15.0,imageHeight: 15.0,addMargin: false),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -183,7 +203,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 textColor: orange,
                 buttonBgColor: Colors.white,
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));}),
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen(role)));}),
           )
         ],
       ),

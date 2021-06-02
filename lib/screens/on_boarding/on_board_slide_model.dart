@@ -31,3 +31,28 @@ final slide_list = [
       title: "Review history!",
       subTitle: "Review all of your tip transaction history all in one place!")
 ];
+
+final tipper_slide_list = [
+  OnBoardSlideModel(
+      imagePath: "tipper_onboard_1.png",
+      title: "Make someone's day",
+      subTitle:
+          "Doctors claim that kindness releases the\n hormone oxytocin which is known to reduce \nhigh blood pressure and lead to better health.\n Easily show kindness to your favorite service\n providers with one tap."),
+  OnBoardSlideModel(
+      imagePath: "tipper_onboard_2.png",
+      title: "Earn Top Tipper status in \nyour town",
+      subTitle:
+          "Each time you tip someone you earn points \nand a spot on the leaderboard!"),
+  OnBoardSlideModel(
+      imagePath: "tipper_onboard_3.png",
+      title: "Improve service and \nrelationships!",
+      subTitle: "People who are rewarded for their work tend \nto go the extra mile. When you're kind to your \nproviders, they'll strive to do a better job for \nyou. It's a win-win!"),
+  OnBoardSlideModel(
+      imagePath: "tipper_onboard_4.png",
+      title: "Feel good guaranteed!",
+      subTitle: "It's easy to get your own custom QR \ncode and tip someone today! Make it\n even easier by adding your contacts on\n the next screen."),
+  OnBoardSlideModel(
+      imagePath: "tipper_onboard_4.png",
+      title: "Feel good guaranteed!",
+      subTitle: "It's easy to get your own custom QR \ncode and tip someone today! Make it\n even easier by adding your contacts on\n the next screen.")
+];

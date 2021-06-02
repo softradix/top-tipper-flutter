@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ScannerViewScreen extends StatefulWidget {
   @override
@@ -8,26 +6,26 @@ class ScannerViewScreen extends StatefulWidget {
 }
 
 class _ScannerViewScreenState extends State<ScannerViewScreen> {
-  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-
-  Barcode result;
-
-  QRViewController controller;
-
-  void _onQRViewCreated(QRViewController controller) {
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        result = scanData;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
-  }
+  // final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+  //
+  // Barcode result;
+  //
+  // QRViewController controller;
+  //
+  // void _onQRViewCreated(QRViewController controller) {
+  //   this.controller = controller;
+  //   controller.scannedDataStream.listen((scanData) {
+  //     setState(() {
+  //       result = scanData;
+  //     });
+  //   });
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   controller?.dispose();
+  //   super.dispose();
+  // }
 
 
   @override
@@ -39,13 +37,11 @@ class _ScannerViewScreenState extends State<ScannerViewScreen> {
             Expanded(
               child: Column(
                 children: [
-                  Expanded(flex:5,child: QRView(key: qrKey, onQRViewCreated: _onQRViewCreated)),
+                  Expanded(flex:5,child: Container(color: Colors.grey,)),
                   Expanded(
                     flex: 1,
                     child: Center(
-                      child: (result != null)?Text(
-                          'Barcode Type: ${describeEnum(result.format)}   Data: ${result.code}')
-                          : Text('Scan a code'),
+                      child: Text('Scan a code'),
                     ),
                   )
                 ],

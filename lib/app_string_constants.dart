@@ -1,5 +1,7 @@
 class AppStringConstants{
   static const String CREATE_ACCOUNT_TO_SECURE_ACCOUNT= "Create an account to secure your rank";
+  static const String START_TIPING_TO_SECURE_ACCOUNT= "Start tipping to secure your rank";
+  static const String START_TIPING_TO_EARN_POINTS= "Start tipping to earn points";
   static const String CREATE_ACCOUNT_TO_EARN_POINTS= "Create an account to earn points";
   static const String I_AM_A= "I am a:";
   static const String Tipper= "Tipper";
@@ -11,6 +13,7 @@ class AppStringConstants{
   static const String USERNAME= "USERNAME";
   static const String GET_STARTED= "Get Started";
   static const String EARN_TIPS_SIGN_UP_TPDAY= "EARN TIPS: SIGN UP TPDAY!";
+  static const String EARN_POINTS_START_TIPPING_TODAY= "EARN POINTS. START TIPPING TODAY!";
   static const String ALREADY_AN_EXISTING_USER= "Already an existing user?";
   static const String ALREADY_AN_ACCOUNT= "Already have an account?";
   static const String Not_Received_Code= "Didn’t receive the code?";
@@ -24,7 +27,7 @@ class AppStringConstants{
   static const String CONTINUE= "CONTINUE";
   static const String Start_receiving_tips= "Start receiving tips";
   static const String NEW_TO_TOP_TIPPER_SIGN_UP= "New to TopTipper? Sign up";
-  static const String SIGN_UP_WITH_APPLE= "Sign up with Apple";
+  static const String SIGN_UP_WITH_APPLE= "SIGN UP WITH APPLE";
   static const String APPLE= "Apple";
   static const String CONNECT_WITH_STRIPE= "CONNECT WITH STRIPE";
   static const String STRIPE= "STRIPE";
@@ -32,6 +35,7 @@ class AppStringConstants{
   static const String Enable_Notifications= "Enable Notifications";
   static const String REGISTER_WITH_EMAIL= "REGISTER WITH EMAIL";
   static const String GET_STARTED_DESCRIPTION= "Create an account to start a tipping relationship with a homeowner, and start earning today!";
+  static const String GET_STARTED_DESCRIPTION_TIPPER= "Register to get your custom QR code and connect with your service provider.";
   static const String WELCOME_TO_TOP_TIPPER= "Welcome to TopTipper!";
   static const String EXISTING_USER_PLEASE_LOGIN= "Existing user? Please login.";
   static const String User_ID_Email= "User ID/Email";
@@ -88,5 +92,11 @@ class AppStringConstants{
   static const String REQUEST_TO_HOME_OWENER= "Send a request to the home owner to establish a TopTipper relationship with them. They will get notified of the request, approve the relationship, and the tipping shall begin!";
   static const String TOTAL_RECEIVED= "Total Received";
   static const String HINT_START_TIP= "Once you’ve start receiving tips, you will see the information here.";
+
+
+  // Role selection Keys
+  static const String ROLE_TYPE= "ROLE_TYPE";
+  static const String ROLE_TIPPER= "TIPPER";
+  static const String ROLE_SERVICE_PROVIDER= "SERVICE_PROVIDER";
 
 }

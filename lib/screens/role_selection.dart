@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_top_tipper/app_string_constants.dart';
+import 'package:flutter_top_tipper/sessionManager/SessionManager.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../colors.dart';
 import 'on_boarding/onboarding_screen.dart';
 
 class RoleSelection extends StatelessWidget {
-
+  SessionManager _sessionManager = SessionManager();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +51,9 @@ class RoleSelection extends StatelessWidget {
                         textColor: orange,
                         buttonBgColor: Colors.white,
                         onPress: () {
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen()));
+                          _sessionManager.clearAll();
+                          _sessionManager.setString(AppStringConstants.ROLE_TYPE, AppStringConstants.ROLE_TIPPER);
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen(AppStringConstants.ROLE_TIPPER)));
                         }),
                     SizedBox(height:20.0),
                     Container(
@@ -61,7 +65,9 @@ class RoleSelection extends StatelessWidget {
                           style: TextStyle(color: Colors.white,fontSize: 16.0),
                         ),
                         onPressed: () {
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen()));
+                          _sessionManager.clearAll();
+                          _sessionManager.setString(AppStringConstants.ROLE_TYPE, AppStringConstants.ROLE_SERVICE_PROVIDER);
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen(AppStringConstants.ROLE_SERVICE_PROVIDER)));
                         },
                         style: OutlinedButton.styleFrom(
                           side: BorderSide(width: 2.0, color: Colors.white),
