@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_top_tipper/app_string_constants.dart';
 import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/dashboard.dart';
+import 'package:flutter_top_tipper/screens/homeOwenerDashboard/home_owener_dashboard.dart';
 import 'package:flutter_top_tipper/screens/sign_up/upload_selfie.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
@@ -192,7 +193,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       textColor: Colors.white,
                                       buttonBgColor: orange,
                                       onPress: () {
-                                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>DashBoardScreen()),(Route<dynamic> route) => false);
+                                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>role == AppStringConstants.ROLE_TIPPER?HomeOwenerDashBoardScreen():DashBoardScreen()),(Route<dynamic> route) => false);
                                       }),
                                 ),
                               ],

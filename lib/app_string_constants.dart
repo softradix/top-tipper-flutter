@@ -99,4 +99,13 @@ class AppStringConstants{
   static const String ROLE_TIPPER= "TIPPER";
   static const String ROLE_SERVICE_PROVIDER= "SERVICE_PROVIDER";
 
+  static const String SEND_A_TIP= "Send A Tip";
+  static const String Report= "Report";
+  static const String ACCEPT= "ACCEPT";
+  static const String REJECT= "REJECT";
+  static const String MESSAGE= "MESSAGE";
+  static const String SEND_TIP= "SEND TIP";
+  static const String TAP_TO_ENABLE= "Tap to \n Enable";
+  static const String TAP_TO_DISABLE= "Tap to \n Disable";
+
 }

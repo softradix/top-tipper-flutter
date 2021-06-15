@@ -5,6 +5,7 @@ import 'package:flutter_top_tipper/colors.dart';
 import 'package:flutter_top_tipper/screens/dashBoard/dashboard.dart';
 import 'package:flutter_top_tipper/screens/forgot_password/ForgotPasswordScreen.dart';
 import 'package:flutter_top_tipper/screens/get_started/oval_shape_button_with_icon.dart';
+import 'package:flutter_top_tipper/screens/homeOwenerDashboard/home_owener_dashboard.dart';
 import 'package:flutter_top_tipper/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter_top_tipper/widgets/elevated_button.dart';
 import 'package:flutter_top_tipper/widgets/image_widget.dart';
@@ -139,7 +140,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                         textColor: Colors.white,
                                         buttonBgColor: orange,
                                         onPress: () {
-                                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>DashBoardScreen()),(Route<dynamic> route) => false);
+                                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> role == AppStringConstants.ROLE_TIPPER?HomeOwenerDashBoardScreen():DashBoardScreen()),(Route<dynamic> route) => false);
                                         }),
                                   ),
                                   Container(
